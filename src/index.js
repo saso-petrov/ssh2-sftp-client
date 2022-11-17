@@ -1287,7 +1287,7 @@ class SftpClient {
         if (f.type === 'd') {
           await this._downloadDir(newSrc, newDst, options);
         } else if (f.type === '-') {
-          if (options?.useFasget) {
+          if (options && options.useFasget) {
             downloadFiles.push(this._fastGet(newSrc, newDst));
           } else {
             downloadFiles.push(this._get(newSrc, newDst));
