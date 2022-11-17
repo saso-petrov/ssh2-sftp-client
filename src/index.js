@@ -1256,7 +1256,7 @@ class SftpClient {
   async _downloadDir(srcDir, dstDir, options) {
     try {
       let fileList = await this._list(srcDir);
-      if (options?.filter) {
+      if (options && options.filter) {
         fileList = fileList.filter((item) =>
           options.filter(
             `${srcDir}${this.remotePathSep}${item.name}`,
