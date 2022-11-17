@@ -1193,7 +1193,7 @@ class SftpClient {
       });
       if (options?.filter) {
         dirEntries = dirEntries.filter((item) =>
-          options.filter(join(srcDir, item.name), item.isDirectory())
+          options?.filter(join(srcDir, item.name), item.isDirectory())
         );
       }
       let fileUploads = [];
