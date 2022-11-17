@@ -1191,9 +1191,9 @@ class SftpClient {
         encoding: 'utf8',
         withFileTypes: true,
       });
-      if (options?.filter) {
+      if (options && options.filter) {
         dirEntries = dirEntries.filter((item) =>
-          options?.filter(join(srcDir, item.name), item.isDirectory())
+          options.filter(join(srcDir, item.name), item.isDirectory())
         );
       }
       let fileUploads = [];
